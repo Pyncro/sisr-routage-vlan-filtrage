@@ -1,0 +1,18 @@
+graph LR
+    id1[[Ordinateur]]-->Broadcast1-->id2{SWITCH 29X0}
+    id1[[Ordinateur]]-->Broadcast2-->id2{SWITCH 29X0}
+    id1[[Ordinateur]]-->CableConsole-->id2{SWITCH 29X0}
+    
+    
+ DONE 
+ 
+ 
+graph TD;
+    id1{SWITCH 29X0} --> |Broad1| A[/Cisco switch\]
+    id1{SWITCH 29X0} --> |#SCOL| A[/Cisco switch\]
+    id1{SWITCH 29X0} --> |Broad2| A[/Cisco switch\]
+    id1{SWITCH 29X0} -->  |#SCOL| ht[\Routeur du poste/]
+    A[/Cisco switch\] --> |cable ethernet FE 0/0| ht[\Routeur du poste/]
+    ht[\Routeur du poste/] --> |cable ethernet FE 0/1| i[(LE MAN)]
+    
+DONE
