@@ -1,0 +1,34 @@
+en 
+conf t
+ip access-list extended 100
+permit icmp any any
+permit icmp any any echo-reply
+permit tcp any eq 22 any
+permit tcp any eq 80 any
+permit tcp any eq 443 any
+permit udp any eq 53 any
+permit udp any eq 853 any
+permit udp 172.30.1.25 0.0.255.255 eq 465 any
+permit tcp 172.30.1.25 0.0.255.255 eq 995 any
+permit tcp 172.30.1.25 0.0.255.255 eq 993 any
+deny ip any any
+exit
+
+
+en
+conf t
+ip access-list extended outacl
+permit icmp any any
+permit udp any any eq 53
+permit udp any any eq 853
+permit tcp any any eq 80
+permit tcp any any eq 443
+permit udp 172.30.1.25 0.0.255.255 any eq 465 
+permit tcp 172.30.1.25 0.0.255.255 any eq 995 
+permit tcp 172.30.1.25 0.0.255.255 any eq 993 
+deny ip any any
+exit
+interface FastEthernet 0/1
+ip access-group 100 in
+ip access-group out100 out
+exit

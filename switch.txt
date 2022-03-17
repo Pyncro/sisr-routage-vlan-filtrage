@@ -1,0 +1,23 @@
+EN 
+
+Conf t 
+
+Interface FastEthernet 0/1 
+
+Switchport mode access  
+
+Switchport acc VLAN 16 
+
+Exit
+
+INT FastEthernet 0/2 
+
+Switchport mode access 
+
+Switchport acc VLAN 116 
+
+Exit
+
+INT F0/3 
+
+Switchport mode trunk 
