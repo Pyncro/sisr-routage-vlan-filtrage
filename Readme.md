@@ -58,7 +58,7 @@ graph TD
 ```
 
 
-Voue ete maintenant pret a utiliser PuTTY.
+Utiliser Putty.
 
 
 ## PuTTY config switch
